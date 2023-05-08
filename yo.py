@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-if __name__ == '__main__':
+def run_program():
     id_invoice = input("Masukkan ID Invoice: ")
     url = 'https://afvr.my.id/api/cek_status'
     data = {'id_invoice': id_invoice}
@@ -25,3 +25,13 @@ if __name__ == '__main__':
             print("Status          : ", invoice['status_transaksi'])
         print("===============================")
 
+    command = input("Ketik 'jalankan' untuk menjalankan program atau 'berhenti' untuk berhenti (tekan enter jika sudah menuliskan perintah): ")
+    if command == "jalankan":
+        run_program()
+    elif command == "berhenti":
+        print("Program dihentikan.")
+    else:
+        print("Perintah tidak dikenali. Program dihentikan.")
+
+if __name__ == '__main__':
+    run_program()
